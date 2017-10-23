@@ -1,0 +1,572 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block styles %}
+<!-- JQUERY SELECT -->
+<link href="css/select2.min.css" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/css/select2.min.css" rel="stylesheet" />
+
+<!-- JQUERY MENU -->
+<link rel="stylesheet" href="css/mega_menu.min.css" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/css/mega_menu.min.css">
+
+<!-- ANIMATION -->
+<link rel="stylesheet" href="css/animate.min.css" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/css/animate.min.css">
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block body %}
+
+<div class="search">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                    <div class="input-group">
+                        <div class="input-group-btn search-panel">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span id="search_concept">Filter By</span> <span class="caret"></span> </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">By Company</a></li>
+                                <li><a href="#">By Function</a></li>
+                                <li><a href="#">By City </a></li>
+                                <li><a href="#">By Salary </a></li>
+                                <li><a href="#">By Industry</a></li>
+                            </ul>
+                        </div>
+                        <input type="hidden" name="search_param" value="all" id="search_param">
+                        <input type="text" class="form-control search-field" name="x" placeholder="Search term...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><span class="fa fa-search"></span></button>
+                        </span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="main-section parallex">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-sm-12 col-md-offset-1 col-xs-12 nopadding">
+                    <div class="search-form-contaner">
+                        <h1 class="search-main-title"> Ten million success stories. Start yours today </h1>
+                        <form class="form-inline">
+                            <div class="col-md-4 col-sm-4 col-xs-12 nopadding">
+                                <div class="form-group">
+                                    
+                                    <input type="text" class="form-control" name="keyword" placeholder="Search Keyword" value="">
+                                    <i class="icon-magnifying-glass"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12 nopadding">
+                                <div class="form-group">
+                                    <select style="height: 60px" class="select-category form-control">
+                                        <option label="Select Option"></option>
+                                        <option value="0">Customer Service</option>
+                                        <option value="1">Designer</option>
+                                        <option value="2">Developer</option>
+                                        <option value="3">Finance</option>
+                                        <option value="4">Human Resource</option>
+                                        <option value="5">Information Technology</option>
+                                        <option value="6">Marketing</option>
+                                        <option value="7">Others</option>
+                                        <option value="8">Sales</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12 nopadding">
+                                <div class="form-group">
+                                    <select style="height: 60px"  class="select-location form-control">
+                                        <option value="">&nbsp;</option>
+                                        <option value="0">SriLanka</option>
+                                        <option value="1">Australia</option>
+                                        <option value="2">Bahrain</option>
+                                        <option value="3">Canada</option>
+                                        <option value="4">Denmark</option>
+                                        <option value="5">Germany</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-12 nopadding">
+                                <div class="form-group form-action">
+                                    <button type="button" class="btn btn-default btn-search-submit">Search <i class="fa fa-angle-right"></i> </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cat-tabs cat-tab-index-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="cat-title">Browse Jobs</div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"> 
+                                <!-- Tabs -->
+                                <ul class="nav panel-tabs">
+                                    <li> <a href="#tab1" data-toggle="tab"><i class="icofont icon-ribbon"></i><span class="hidden-xs hidden-sm">By Company</span></a> </li>
+                                    <li> <a href="#tab2" data-toggle="tab"><i class="icofont icon-layers"></i><span class="hidden-xs hidden-sm">By Function</span></a> </li>
+                                    <li class="active"> <a href="#tab3" data-toggle="tab"><i class="icofont icon-global"></i><span class="hidden-xs hidden-sm">By City</span></a> </li>
+                                    <li> <a href="#tab4" data-toggle="tab"><i class="icofont icon-linegraph"></i><span class="hidden-xs hidden-sm">By Type</span></a> </li>
+                                    <li> <a href="#tab5" data-toggle="tab"><i class="icofont icon-briefcase"></i><span class="hidden-xs hidden-sm">By Industry</span></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div class="tab-pane tab-pane animated fadeInUp" id="tab1" >
+                                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/1.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/1.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Documentation Specialist</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. United States</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> New York </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-full-time-color"> <i class="fa fa-clock-o"></i> Full time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/1.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/1.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Network Director</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Australia</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6 ">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Melbourne </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-part-time-color"> <i class="fa fa-clock-o"></i> Part Time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/1.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/1.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Looking for Bootstrap designer</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Pakistan</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Lahore </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-remote-color"> <i class="fa fa-clock-o"></i> Remote </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/1.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/1.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Assistant Engineer (IT/Networks)</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Malaysia</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Singapore </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-intern-color"> <i class="fa fa-clock-o"></i> Internship </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane animated fadeInDown" id="tab2">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/1.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/1.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Looking for Bootstrap designer</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Pakistan</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Lahore </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-remote-color"> <i class="fa fa-clock-o"></i> Remote </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/5.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/5.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Documentation Specialist</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. United States</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> New York </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-full-time-color"> <i class="fa fa-clock-o"></i> Full time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/3.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/3.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Assistant Engineer (IT/Networks)</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Malaysia</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Singapore </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-intern-color"> <i class="fa fa-clock-o"></i> Internship </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/4.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/4.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Network Director</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Australia</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Melbourne </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-part-time-color"> <i class="fa fa-clock-o"></i> Part Time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane active animated fadeInLeft" id="tab3">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/5.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/5.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Looking for Bootstrap designer</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Pakistan</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> New York </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-full-time-color"> <i class="fa fa-clock-o"></i> Full time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/3.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/3.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Documentation Specialist</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. United States</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> New York </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-intern-color"> <i class="fa fa-clock-o"></i> Internship </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/1.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/1.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Assistant Engineer (IT/Networks)</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Malaysia</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> New York </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-part-time-color"> <i class="fa fa-clock-o"></i> Part Time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/3.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/3.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Network Director</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Australia</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> New York </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-remote-color"> <i class="fa fa-clock-o"></i> Remote </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane animated fadeInRight" id="tab4">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/5.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/5.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Documentation Specialist</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. United States</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> New York </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-full-time-color"> <i class="fa fa-clock-o"></i> Full time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/1.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/1.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Network Director</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Australia</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Melbourne </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-full-time-color"> <i class="fa fa-clock-o"></i> Full time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/3.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/3.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Looking for Bootstrap designer</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Pakistan</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Lahore </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-full-time-color"> <i class="fa fa-clock-o"></i> Full time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/4.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/4.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Assistant Engineer (IT/Networks)</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Malaysia</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Singapore </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-full-time-color"> <i class="fa fa-clock-o"></i> Full time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane animated fadeInUp" id="tab5">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/1.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/1.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Network Director</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. United States</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> New York </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-full-time-color"> <i class="fa fa-clock-o"></i> Full time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/3.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/3.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Network Director (IT/Networks)</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Malaysia</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Singapore </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-intern-color"> <i class="fa fa-clock-o"></i> Internship </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/5.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/5.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Looking for Technical Network Director</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Pakistan</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Lahore </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-remote-color"> <i class="fa fa-clock-o"></i> Remote </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="job-box">
+                                            <div class="col-md-1 col-sm-1 col-xs-12 nopadding  hidden-xs hidden-sm">
+                                                <div class="comp-logo"> <img src="images/company/1.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/company/1.png" class="img-responsive" alt="scriptsbundle"> </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <div class="job-title-box"> <a href="#">
+                                                    <div class="job-title"> Technical Network Director</div>
+                                                    </a> <a href="#"><span class="comp-name">conversi Pvt. Ltd. Australia</span></a> </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-location"> <i class="fa fa-location-arrow"></i> Melbourne </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-6">
+                                                <div class="job-type jt-part-time-color"> <i class="fa fa-clock-o"></i> Part Time </div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-2 col-xs-12">
+                                                <button class="btn btn-primary btn-custom">Apply Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 col-xs-6">
+                    <div class="fact-box">
+                        <div class="single-facts-area">
+                            <div class="facts-icon"> <i class="icon-megaphone"></i> </div>
+                            <span class="counter">180</span>
+                            <h3>Jobs</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-xs-6">
+                    <div class="fact-box">
+                        <div class="single-facts-area">
+                            <div class="facts-icon"> <i class="icon-document"></i> </div>
+                            <span class="counter">175</span>
+                            <h3> Resume </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-xs-6">
+                    <div class="fact-box">
+                        <div class="single-facts-area">
+                            <div class="facts-icon"> <i class="icon-profile-male"></i> </div>
+                            <span class="counter">20</span>
+                            <h3>Members</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-xs-6">
+                    <div class="fact-box">
+                        <div class="single-facts-area">
+                            <div class="facts-icon"> <i class="icon-toolbox"></i> </div>
+                            <span class="counter">2142</span>
+                            <h3>Company</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

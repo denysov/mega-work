@@ -13,24 +13,52 @@
         
         <link href="css/select2.min.css" rel="stylesheet">
         
+        {% block styles %}{% endblock %}
+        
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900,300" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
         
         <script src="js/modernizr.js"></script>
         
+        
+        
     </head>
     
     
     <body>
-        {{ include('AppBundle:partials:navbar.html.twig') }}
+        {{ include('AppBundle:_partials:navbar.html.twig') }}
         <div class="clearfix"></div>
-        {{ include('AppBundle:partials:header.html.twig') }}
+        {% block header %}
+        {{ include('AppBundle:_partials:header.html.twig') }}
+        {% endblock %}
         
         <div class="page category-page">
             {% block body %}{% endblock %}
         </div>
         
-        {{ include('AppBundle:partials:footer.html.twig') }}
+        {{ include('AppBundle:_partials:footer.html.twig') }}
+        
+        <!-- JAVASCRIPT JS  --> 
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    
+    <!-- JAVASCRIPT JS  --> 
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script> 
+ 
+    <!-- BOOTSTRAP CORE JS --> 
+    <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+    
+    <!-- JQUERY SELECT --> 
+    <script type="text/javascript" src="js/select2.min.js"></script> 
+    
+    <!-- MEGA MENU --> 
+    <script type="text/javascript" src="js/mega_menu.min.js"></script> 
+    
+      
+    <!-- CORE JS --> 
+    <script type="text/javascript" src="js/custom.js"></script> 
+        
+    {% block scripts %}{% endblock %}
+    
     </body>
 </html>
