@@ -1,11 +1,11 @@
 <?php
 
 namespace AppBundle\Entity;
-
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * User
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var int
@@ -108,6 +108,19 @@ class User
     public function getEmail()
     {
         return $this->email;
+    }
+    
+    public function getSalt() {
+        return null;
+    }
+    
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
+    }
+    
+    public function eraseCredentials() {
+        
     }
 }
 
