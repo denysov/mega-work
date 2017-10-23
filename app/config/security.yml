@@ -27,3 +27,6 @@ security:
             logout:
                 path:   /logout
                 target: /
+                
+    access_control:
+        - { path: ^/user/profile, roles: ROLE_USER }
