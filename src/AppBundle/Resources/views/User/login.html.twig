@@ -5,6 +5,12 @@
 {% block body %}
 
 <section class="login-page light-blue">
+    
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    
+    <form action="{{ path('login') }}" method="post">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -22,27 +28,28 @@
                                     <div class="or">OR</div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Email: <span class="required">*</span></label>
-                                    <input placeholder="" class="form-control" type="email">
+                                    <label>Username: <span class="required">*</span></label>
+                                    <input name="_username" placeholder="" class="form-control" type="text">
                                 </div>
                                 <div class="form-group">
                                     <label>Password: <span class="required">*</span></label>
-                                    <input placeholder="" class="form-control" type="password">
+                                    <input name="_password" placeholder="" class="form-control" type="password">
                                 </div>
                                 <div class="loginbox-forgot">
                                     <a href="">Forgot Password?</a>
                                 </div>
                                 <div class="loginbox-submit">
-                                    <input type="button" class="btn btn-default btn-block" value="Login">
+                                    <input type="submit" class="btn btn-default btn-block" value="Login">
                                 </div>
                                 <div class="loginbox-signup">
-                                    <a href="#register.html">Sign Up With Email</a>
+                                    <a href="{{ path('register') }}">Sign Up With Email</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
         </section>
 
 {% endblock %}

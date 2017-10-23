@@ -7,6 +7,7 @@ use AppBundle\Entity\User;
 use AppBundle\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class UserController extends Controller
 {
@@ -33,10 +34,11 @@ class UserController extends Controller
         ));
     }
     
-    public function loginAction()
+    public function loginAction(AuthenticationUtils $authUtils)
     {
         return $this->render('AppBundle:User:login.html.twig', array(
-            // ...
+            'last_username' => $authUtils->getLastUsername(),
+            'error'         => $authUtils->getLastAuthenticationError(),
         ));
     }
 
