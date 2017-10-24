@@ -5,18 +5,12 @@
 {% block body %}
 
 <section class="login-page light-blue">
-    
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-    
-    <form action="{{ path('login') }}" method="post">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="login-container">
                             <div class="loginbox">
-                                <div class="loginbox-title">sign in using social accounts</div>
+                                <div class="loginbox-title">{% trans %}sign in using social accounts{% endtrans %}</div>
                                 <ul class="social-network social-circle onwhite">
                                     <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
@@ -28,28 +22,27 @@
                                     <div class="or">OR</div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Username: <span class="required">*</span></label>
-                                    <input name="_username" placeholder="" class="form-control" type="text">
+                                    <label>{% trans %}Email{% endtrans %}: <span class="required">*</span></label>
+                                    <input placeholder="" class="form-control" type="email">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password: <span class="required">*</span></label>
-                                    <input name="_password" placeholder="" class="form-control" type="password">
+                                    <label>{% trans %}Password{% endtrans %}: <span class="required">*</span></label>
+                                    <input placeholder="" class="form-control" type="password">
                                 </div>
                                 <div class="loginbox-forgot">
-                                    <a href="">Forgot Password?</a>
+                                    <a href="">{% trans %}Forgot Password?{% endtrans %}</a>
                                 </div>
                                 <div class="loginbox-submit">
-                                    <input type="submit" class="btn btn-default btn-block" value="Login">
+                                    <input type="button" class="btn btn-default btn-block" value="Login">
                                 </div>
                                 <div class="loginbox-signup">
-                                    <a href="{{ path('register') }}">Sign Up With Email</a>
+                                    <a href="#register.html">{% trans %}Sign Up With Email{% endtrans %}</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </form>
         </section>
 
 {% endblock %}

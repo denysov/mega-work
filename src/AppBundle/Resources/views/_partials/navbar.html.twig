@@ -1,9 +1,23 @@
     <nav id="menu-1" class="mega-menu fa-change-black" data-color=""> 
     <section class="menu-list-items container"> 
+        <ul class="menu-links pull-left" style="display: none; max-height: 400px; overflow: auto;">
+            <li class="hoverTrigger">
+                <a href="javascript:void(0)"> <img src="/images/flags/{{ app.session.get('_locale', 'ua') }}.svg" alt="user-img" class="img-circle" width="36"> <div class="mobileTriggerButton"></div></a>
+                <ul class="drop-down-multilevel left-side effect-fade" style="transition: all 400ms ease;">
+                    <li><a href="{{ path('change_lang', {'lang': 'ua'}) }}"> <img src="/images/flags/ua.svg"class="img-circle" width="36"> Українська</a></li>
+                    <li><a href="{{ path('change_lang', {'lang': 'ru'}) }}"> <img src="/images/flags/ru.svg" class="img-circle" width="36"> Русский</a></li>
+                    <li><a href="{{ path('change_lang', {'lang': 'en'}) }}"> <img src="/images/flags/en.svg" class="img-circle" width="36"> English</a></li>
+                </ul>
+            </li>
+        </ul>
         <ul class="menu-logo">
             <li> <a href="index.html"> <img src="/images/logo.png" alt="logo" class="img-responsive"> </a> <div class="menu-mobile-collapse-trigger"><span></span></div></li>
         </ul>
+        
+        
         <ul class="menu-links pull-right" style="display: none; max-height: 400px; overflow: auto;">
+            
+            
             <li class="hoverTrigger"> <a href="javascript:void(0)"> Home <i class="fa fa-angle-down fa-indicator"></i><div class="mobileTriggerButton"></div></a>
                 <ul class="drop-down-multilevel effect-fade" style="transition: all 400ms ease;">
                     <li class="hoverTrigger"><a href="javascript:void(0)">Home Style  <label class="label label-info">New</label> <i class="fa fa-angle-right fa-indicator"></i> <div class="mobileTriggerButton"></div></a> 
@@ -107,83 +121,10 @@
                     </li>
                 </ul>
             </li>
-            <li class="hoverTrigger"><a href="javascript:void(0)">Mega Menu <i class="fa fa-angle-down fa-indicator"></i><div class="mobileTriggerButton"></div></a> 
-                <div class="grid-col-12 drop-down effect-fade" style="transition: all 400ms ease;"> 
-                    <div class="grid-row"> 
-                        <div class="grid-col-2">
-                            <h4>Company Pages</h4>
-                            <ul>
-                                <li><a href="company-dashboard.html"> <i class="fa fa-angle-right"></i> Dashboard</a></li>
-                                <li><a href="company-dashboard-edit-profile.html"> <i class="fa fa-angle-right"></i> Edit Profile</a></li>
-                                <li><a href="company-dashboard-active-jobs.html"> <i class="fa fa-angle-right"></i> Active Jobs</a></li>
-                                <li><a href="company-dashboard-followers.html"> <i class="fa fa-angle-right"></i> Followers</a></li>
-                                <li><a href="company-dashboard-resume.html"> <i class="fa fa-angle-right"></i> Job Resume</a></li>
-                            <li><a href="elements.html"> <i class="fa fa-angle-right"></i> UI Elements <label class="label label-info">New</label></a></li>
-                            </ul>
-                        </div>
-                        <div class="grid-col-2">
-                            <h4>User Pages</h4>
-                            <ul>
-                            <li><a href="user-dashboard.html"> <i class="fa fa-angle-right"></i> User Dashboard</a></li>
-                            <li><a href="user-edit-profile.html"> <i class="fa fa-angle-right"></i> User Edit Profile</a></li>
-                            <li><a href="user-followed-companies.html"> <i class="fa fa-angle-right"></i> Followed Companies</a></li>
-                            <li><a href="user-job-applied.html"> <i class="fa fa-angle-right"></i> Job Applied</a></li>
-                            <li><a href="user-resume.html"> <i class="fa fa-angle-right"></i> Use Resume</a></li>
-                            <li><a href="users.html"> <i class="fa fa-angle-right"></i> All Users </a></li>
-                            <li><a href="user-resume-build.html"> <i class="fa fa-angle-right"></i> Build Resume  <label class="label label-info">New</label></a></li>
-                        </ul>
-                        </div>
-                        <div class="grid-col-2">
-                            <h4>Blog Pages</h4>
-                            <ul>
-                                <li><a href="blog1.html"> <i class="fa fa-angle-right"></i> Grid Right sidebar</a></li>
-                                <li><a href="blog2.html"> <i class="fa fa-angle-right"></i> Blog No Sidebar</a></li>
-                                <li><a href="blog3.html"> <i class="fa fa-angle-right"></i> Blog Listing</a></li>
-                                <li><a href="blog4.html"> <i class="fa fa-angle-right"></i> Left Sidebar</a></li>
-                                <li><a href="blog5.html"> <i class="fa fa-angle-right"></i> Grid Right sidebar </a></li>
-                                <li><a href="blog-single.html"> <i class="fa fa-angle-right"></i> Single Blog 1</a></li>
-                                <li><a href="blog-single2.html"> <i class="fa fa-angle-right"></i> Single Blog 2</a></li>
-                            </ul>
-                        </div>
-                        <div class="grid-col-2">
-                            <h4>Job pages</h4>
-                            <ul>
-                                <li><a href="job-category1.html"> <i class="fa fa-angle-right"></i> Job Listing 1</a></li>
-                                <li><a href="job-category2.html"> <i class="fa fa-angle-right"></i> Job Listing 2</a></li>
-                                <li><a href="post-job.html"> <i class="fa fa-angle-right"></i> Job Post 1</a></li>
-                                <li><a href="post-job2.html"> <i class="fa fa-angle-right"></i> Job Post 2</a></li>
-                                <li><a href="post-job3.html"> <i class="fa fa-angle-right"></i> Job Post 3 </a></li>
-                                <li><a href="post-job-wizard.html"> <i class="fa fa-angle-right"></i> Job Post Wizard</a></li>
-                            </ul>
-                        </div>
-                        <div class="grid-col-2">
-                            <h4>Resume Pages</h4>
-                            <ul>
-                            <li><a href="resume.html"> <i class="fa fa-angle-right"></i> Resume Style 1</a></li>
-                            <li><a href="resume2.html"> <i class="fa fa-angle-right"></i> Resume Style 2</a></li>
-                            <li><a href="resume3.html"> <i class="fa fa-angle-right"></i> Resume Style 3</a></li>
-                            <li><a href="resume4.html"> <i class="fa fa-angle-right"></i> Resume Style 4</a></li>
-                            <li><a href="resume5.html"> <i class="fa fa-angle-right"></i> Resume Style 5 </a></li>
-                            <li><a href="resume6.html"> <i class="fa fa-angle-right"></i> Resume Style 6</a></li>
-                            <li><a href="resume7.html"> <i class="fa fa-angle-right"></i> Resume Style 7 <label class="label label-info">New</label></a></li>
-                        </ul>
-                        </div>
-                        <div class="grid-col-2">
-                            <h4>Other pages</h4>
-                            <ul>
-                                <li><a href="single-job.html"> <i class="fa fa-angle-right"></i> Single Job 1</a></li>
-                                <li><a href="single-job2.html"> <i class="fa fa-angle-right"></i> Single job 2</a></li>
-                                <li><a href="single-job3.html"> <i class="fa fa-angle-right"></i> Single job 3 <label class="label label-info">New</label></a></li>
-                                <li><a href="pricing.html"> <i class="fa fa-angle-right"></i> Pricing Tables</a></li>
-                                <li><a href="faq.html"> <i class="fa fa-angle-right"></i> FAQ's</a></li>
-                                <li><a href="all-categories.html"> <i class="fa fa-angle-right"></i> All Categories</a></li>
-                                <li><a href="all-company.html"> <i class="fa fa-angle-right"></i> All Companies</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </li>
             <li class="no-bg"><a href="" class="p-job"><i class="fa fa-plus-square"></i> Post a Job</a></li>
+            
+            
+            
             {# If user not logged in showing login button #}
             {% if not is_granted('ROLE_USER') %}
                 <li class="no-bg login-btn-no-bg"><a href="{{ path('login') }}" class="login-header-btn"><i class="fa fa-sign-in"></i> Log in</a></li>
@@ -199,6 +140,9 @@
                 </ul>
             </li>
             {% endif %}
+            
+            
+            
         </ul>
     </section>
 </nav>

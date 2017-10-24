@@ -43,7 +43,11 @@ class UserController extends Controller
         ));
     }
 
-    public function profileAction() {
+    public function profileAction(Request $request) {
+    
+        $locale = $request->setLocale('en');
+        
+    
         return $this->render('AppBundle:User:profile.html.twig', array(
            
         ));
