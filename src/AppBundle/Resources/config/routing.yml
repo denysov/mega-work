@@ -7,12 +7,11 @@ register:
 login:
     path:     /login
     defaults: { _controller: AppBundle:User:login }
-
+    
 logout:
     path:     /logout
-    defaults: { _controller: AppBundle:User:logout }
-
+    defaults: { _controller: AppBundle:User:logout }    
 
 user_profile:
-    path:     /user
+    path:     /user/profile
     defaults: { _controller: AppBundle:User:profile }

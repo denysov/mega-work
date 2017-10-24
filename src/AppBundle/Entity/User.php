@@ -116,7 +116,7 @@ class User implements UserInterface
     
     public function getRoles()
     {
-        return ['ROLE_TEDT'];
+        return ['ROLE_USER'];
     }
     
     public function eraseCredentials() {

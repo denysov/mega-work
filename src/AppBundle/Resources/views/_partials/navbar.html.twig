@@ -1,7 +1,7 @@
     <nav id="menu-1" class="mega-menu fa-change-black" data-color=""> 
     <section class="menu-list-items container"> 
         <ul class="menu-logo">
-            <li> <a href="index.html"> <img src="images/logo.png" alt="logo" class="img-responsive"> </a> <div class="menu-mobile-collapse-trigger"><span></span></div></li>
+            <li> <a href="index.html"> <img src="/images/logo.png" alt="logo" class="img-responsive"> </a> <div class="menu-mobile-collapse-trigger"><span></span></div></li>
         </ul>
         <ul class="menu-links pull-right" style="display: none; max-height: 400px; overflow: auto;">
             <li class="hoverTrigger"> <a href="javascript:void(0)"> Home <i class="fa fa-angle-down fa-indicator"></i><div class="mobileTriggerButton"></div></a>
@@ -184,7 +184,21 @@
                 </div>
             </li>
             <li class="no-bg"><a href="" class="p-job"><i class="fa fa-plus-square"></i> Post a Job</a></li>
-            <li class="no-bg login-btn-no-bg"><a href="{{ path('login') }}" class="login-header-btn"><i class="fa fa-sign-in"></i> Log in</a></li>
+            {# If user not logged in showing login button #}
+            {% if not is_granted('ROLE_USER') %}
+                <li class="no-bg login-btn-no-bg"><a href="{{ path('login') }}" class="login-header-btn"><i class="fa fa-sign-in"></i> Log in</a></li>
+            {% else %}    
+            {# if logged in showig avatar #}
+            <li class="profile-pic hoverTrigger">
+                <a href="javascript:void(0)"> <img src="/images/admin.jpg.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/admin.jpg" alt="user-img" class="img-circle" width="36"><span class="hidden-xs hidden-sm">Arslan </span><i class="fa fa-angle-down fa-indicator"></i> <div class="mobileTriggerButton"></div></a>
+                <ul class="drop-down-multilevel left-side effect-fade" style="transition: all 400ms ease;">
+                    <li><a href="{{ path('user_profile') }}"><i class="fa fa-user"></i> My Profile</a></li>
+                    <li><a href="#"><i class="fa fa-mail-forward"></i> Inbox</a></li>
+                    <li><a href="#"><i class="fa fa-gear"></i> Account Setting</a></li>
+                    <li><a href="{{ path('logout') }}"><i class="fa fa-power-off"></i> Logout</a></li>
+                </ul>
+            </li>
+            {% endif %}
         </ul>
     </section>
 </nav>
