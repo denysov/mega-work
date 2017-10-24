@@ -14,7 +14,7 @@ class UserController extends Controller
 {
     public function registerAction(Request $request, UserPasswordEncoderInterface $encoder)
     {
-        $user = new User();
+        $user = new User(); 
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         
@@ -44,10 +44,6 @@ class UserController extends Controller
     }
 
     public function profileAction(Request $request) {
-    
-        $locale = $request->setLocale('en');
-        
-    
         return $this->render('AppBundle:User:profile.html.twig', array(
            
         ));
