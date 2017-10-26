@@ -43,8 +43,27 @@ class UserController extends Controller
         ));
     }
 
+    public function profileMenuAction(Request $request) {
+        
+        return $this->render('AppBundle:User:profile-menu.html.twig', [
+            'route' => $routeName
+        ]);
+    }
+
     public function profileAction(Request $request) {
         return $this->render('AppBundle:User:profile.html.twig', array(
+           
+        ));
+    }
+    
+    public function profileEditAction(Request $request) {
+        return $this->render('AppBundle:User:profile-edit.html.twig', array(
+           
+        ));
+    }
+    
+    public function profileCreateResumeAction(Request $request) {
+        return $this->render('AppBundle:User:profile-edit.html.twig', array(
            
         ));
     }

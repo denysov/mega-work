@@ -28,7 +28,7 @@
             {% else %}    
             {# if logged in showig avatar #}
             <li class="profile-pic hoverTrigger">
-                <a href="javascript:void(0)"> <img src="/images/admin.jpg.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/admin.jpg" alt="user-img" class="img-circle" width="36"><span class="hidden-xs hidden-sm">Arslan </span><i class="fa fa-angle-down fa-indicator"></i> <div class="mobileTriggerButton"></div></a>
+                <a href="javascript:void(0)"> <img src="/images/admin.jpg.png" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/admin.jpg" alt="user-img" class="img-circle" width="36"><span class="hidden-xs hidden-sm"> {{ app.user.username }} </span><i class="fa fa-angle-down fa-indicator"></i> <div class="mobileTriggerButton"></div></a>
                 <ul class="drop-down-multilevel left-side effect-fade" style="transition: all 400ms ease;">
                     <li><a href="{{ path('user_profile') }}"><i class="fa fa-user"></i> My Profile</a></li>
                     <li><a href="#"><i class="fa fa-mail-forward"></i> Inbox</a></li>

@@ -16,7 +16,39 @@ user_profile:
     path:     /user/profile
     defaults: { _controller: AppBundle:User:profile }
     
+user_profile_edit:
+    path:     /user/profile/edit
+    defaults: { _controller: AppBundle:User:profileEdit }    
+    
 
 change_lang:
     path:     /change/lang/{lang}
     defaults: { _controller: AppBundle:Lang:change }
+
+stub:
+    path:     /stub
+    defaults: { _controller: AppBundle:UserProfile:stub }
+
+dashboard:
+    path:     /dashboard
+    defaults: { _controller: AppBundle:UserProfile:dashboard }
+
+edit:
+    path:     /edit
+    defaults: { _controller: AppBundle:UserProfile:edit }
+
+edit_resume:
+    path:     /editResume
+    defaults: { _controller: AppBundle:UserProfile:editResume }
+
+saved_resume:
+    path:     /savedResume
+    defaults: { _controller: AppBundle:UserProfile:savedResume }
+
+jobs:
+    path:     /jobs
+    defaults: { _controller: AppBundle:UserProfile:jobs }
+
+followed:
+    path:     /followed
+    defaults: { _controller: AppBundle:UserProfile:followed }

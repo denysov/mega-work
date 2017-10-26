@@ -1,0 +1,26 @@
+<div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="profile-nav">
+        <div class="panel">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="{% if app.request.attributes.get('_route') == 'user_profile' %}active{% endif %}">
+                    <a href="{{ path('user_profile') }}"> <i class="fa fa-user"></i> Profile</a>
+                </li>
+                <li class="{% if app.request.attributes.get('_route') == 'user_profile_edit' %}active{% endif %}">
+                    <a href="{{ path('user_profile_edit') }}"> <i class="fa fa-edit"></i> Edit Profile</a>
+                </li>
+                <li class="{% if app.request.attributes.get('_route') == '_list' %}active{% endif %}">
+                    <a href="javascript:if(confirm(%27http://templates.scriptsbundle.com/opportunities-v3/demo/user-resume-build.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://templates.scriptsbundle.com/opportunities-v3/demo/user-resume-build.html%27" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/user-resume-build.html"> <i class="fa fa-file-o"></i>Build Resume </a>
+                </li>
+                <li class="{% if app.request.attributes.get('_route') == '_list' %}active{% endif %}"> 
+                    <a href="javascript:if(confirm(%27http://templates.scriptsbundle.com/opportunities-v3/demo/user-resume.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://templates.scriptsbundle.com/opportunities-v3/demo/user-resume.html%27" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/user-resume.html"> <i class="fa fa-file-o"></i>Saved Resume </a>
+                </li>
+                <li class="{% if app.request.attributes.get('_route') == '_list' %}active{% endif %}">
+                    <a href="javascript:if(confirm(%27http://templates.scriptsbundle.com/opportunities-v3/demo/user-job-applied.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://templates.scriptsbundle.com/opportunities-v3/demo/user-job-applied.html%27" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/user-job-applied.html"> <i class="fa  fa-list-ul"></i> Jobs Applied</a>
+                </li>
+                <li class="{% if app.request.attributes.get('_route') == '_list' %}active{% endif %}">
+                    <a href="javascript:if(confirm(%27http://templates.scriptsbundle.com/opportunities-v3/demo/user-followed-companies.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://templates.scriptsbundle.com/opportunities-v3/demo/user-followed-companies.html%27" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/user-followed-companies.html"> <i class="fa  fa-bookmark-o"></i> Followed Companies </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
