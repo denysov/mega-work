@@ -15,14 +15,14 @@ class UserProfileController extends Controller
 
     public function dashboardAction()
     {
-        return $this->render('AppBundle:UserProfile:dashboard.html.twig', array(
+        return $this->render('AppBundle:UserProfile:profile.html.twig', array(
             // ...
         ));
     }
 
     public function editAction()
     {
-        return $this->render('AppBundle:UserProfile:edit.html.twig', array(
+        return $this->render('AppBundle:UserProfile:profile-edit.html.twig', array(
             // ...
         ));
     }

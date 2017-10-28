@@ -18,4 +18,26 @@ AppBundle\Entity\User:
         email:
             type: string
             length: 255
+        first_name:
+            type: string
+            length: 255
+        last_name:
+            type: string
+            length: 255
+        birth_date:
+            type: string
+            length: 255
+        phone:
+            type: string
+            length: 255
+        education:
+            type: string
+            length: 255
+        address:
+            type: string
+            length: 255
+        about:
+            type: string
+            length: 255
+            
     lifecycleCallbacks: {  }

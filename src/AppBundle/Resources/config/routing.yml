@@ -1,3 +1,4 @@
+# USER ROUTES 
 
 register:
     path:     /register
@@ -12,43 +13,38 @@ logout:
     path:     /logout
     defaults: { _controller: AppBundle:User:logout }    
 
-user_profile:
-    path:     /user/profile
-    defaults: { _controller: AppBundle:User:profile }
-    
-user_profile_edit:
-    path:     /user/profile/edit
-    defaults: { _controller: AppBundle:User:profileEdit }    
-    
+# CHANGE LANGUAGE
 
 change_lang:
     path:     /change/lang/{lang}
     defaults: { _controller: AppBundle:Lang:change }
 
+# USER PROFILE ROUTES
+
 stub:
     path:     /stub
     defaults: { _controller: AppBundle:UserProfile:stub }
 
-dashboard:
-    path:     /dashboard
+user_profile:
+    path:     /user/profile
     defaults: { _controller: AppBundle:UserProfile:dashboard }
 
-edit:
-    path:     /edit
+user_profile_edit:
+    path:     /user/profile/edit
     defaults: { _controller: AppBundle:UserProfile:edit }
 
-edit_resume:
+user_profile_edit_resume:
     path:     /editResume
-    defaults: { _controller: AppBundle:UserProfile:editResume }
+    defaults: { _controller: AppBundle:UserProfile:stub }
 
-saved_resume:
+user_profile_saved_resume:
     path:     /savedResume
-    defaults: { _controller: AppBundle:UserProfile:savedResume }
+    defaults: { _controller: AppBundle:UserProfile:stub }
 
-jobs:
+user_profile_jobs:
     path:     /jobs
-    defaults: { _controller: AppBundle:UserProfile:jobs }
+    defaults: { _controller: AppBundle:UserProfile:stub }
 
-followed:
+user_profile_followed:
     path:     /followed
-    defaults: { _controller: AppBundle:UserProfile:followed }
+    defaults: { _controller: AppBundle:UserProfile:stub }
