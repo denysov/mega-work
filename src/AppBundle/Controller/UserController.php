@@ -4,7 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\User;
-use AppBundle\Form\UserType;
+use AppBundle\Form\UserRegisterType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -15,7 +15,7 @@ class UserController extends Controller
     public function registerAction(Request $request, UserPasswordEncoderInterface $encoder)
     {
         $user = new User(); 
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserRegisterType::class, $user);
         $form->handleRequest($request);
         
         if ($form->isValid() && $form->isSubmitted()) {

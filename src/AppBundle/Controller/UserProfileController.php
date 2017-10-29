@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\UserEditType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class UserProfileController extends Controller
@@ -22,8 +23,11 @@ class UserProfileController extends Controller
 
     public function editAction()
     {
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $form = $this->createForm(UserEditType::class, $user);
+
         return $this->render('AppBundle:UserProfile:profile-edit.html.twig', array(
-            // ...
+            'form' => $form->createView()
         ));
     }
 
