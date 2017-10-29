@@ -21,23 +21,29 @@ AppBundle\Entity\User:
         first_name:
             type: string
             length: 255
+            nullable: true
         last_name:
             type: string
             length: 255
+            nullable: true
         birth_date:
             type: string
             length: 255
+            nullable: true
         phone:
             type: string
             length: 255
+            nullable: true
         education:
             type: string
             length: 255
+            nullable: true
         address:
             type: string
             length: 255
+            nullable: true
         about:
-            type: string
-            length: 255
+            type: stext
+            nullable: true
             
     lifecycleCallbacks: {  }
