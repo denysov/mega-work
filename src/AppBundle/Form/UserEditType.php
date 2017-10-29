@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,7 +20,12 @@ class UserEditType extends AbstractType
         $builder
             ->add('first_name')
             ->add('last_name')
-            ->add('email');
+            ->add('birth_date', DateType::class, ['widget' => 'single_text'])
+            ->add('phone')
+            ->add('email')
+            ->add('education')
+            ->add('address')
+            ->add('about');
     }
     
     /**

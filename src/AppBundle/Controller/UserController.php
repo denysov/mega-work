@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Events\UserEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\User;
 use AppBundle\Form\UserRegisterType;
@@ -24,6 +25,9 @@ class UserController extends Controller
             $user->setPassword($encoded);
             $em->persist($user);
             $em->flush();
+
+            $dispatcher = $this->get('event_dispatcher');
+            $dispatcher->dispatch(UserEvent::EVENT_USER_REGISTERED, new UserEvent($this->container, $user));
 
             return $this->redirectToRoute('homepage');
         }

@@ -27,8 +27,7 @@ AppBundle\Entity\User:
             length: 255
             nullable: true
         birth_date:
-            type: string
-            length: 255
+            type: date
             nullable: true
         phone:
             type: string

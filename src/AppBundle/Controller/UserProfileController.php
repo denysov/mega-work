@@ -2,8 +2,10 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Events\UserEvent;
 use AppBundle\Form\UserEditType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class UserProfileController extends Controller
 {
@@ -21,10 +23,23 @@ class UserProfileController extends Controller
         ));
     }
 
-    public function editAction()
+    public function editAction(Request $request)
     {
         $user = $this->get('security.token_storage')->getToken()->getUser();
         $form = $this->createForm(UserEditType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush();
+
+                $dispatcher = $this->get('event_dispatcher');
+                $dispatcher->dispatch(UserEvent::EVENT_USER_EDITED, new UserEvent($this->container, $user));
+            }
+        }
+
 
         return $this->render('AppBundle:UserProfile:profile-edit.html.twig', array(
             'form' => $form->createView()

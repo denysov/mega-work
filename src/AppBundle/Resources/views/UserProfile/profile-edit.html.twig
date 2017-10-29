@@ -53,7 +53,14 @@
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
                                 <div class="profile-edit row">
-                                    <form>
+                                    {{ form_start(form) }}
+
+                                        {% for message in app.flashes('notice') %}
+                                            <div class="alert alert-success" role="alert">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
+
                                         <div class="col-md-6 col-sm-12">
                                             {{ form_row(form.first_name) }}
                                         </div>
@@ -61,45 +68,27 @@
                                             {{ form_row(form.last_name) }}
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <div class="form-group">
-                                                <label>Date Of Birth <span class="required">*</span></label>
-                                                <input type="text" placeholder="" class="form-control">
-                                            </div>
+                                            {{ form_row(form.birth_date) }}
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <div class="form-group">
-                                                <label>Email <span class="required">*</span></label>
-                                                <input type="email" placeholder="" class="form-control">
-                                            </div>
+                                            {{ form_row(form.email) }}
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <div class="form-group">
-                                                <label>Phone <span class="required">*</span></label>
-                                                <input type="text" placeholder="" class="form-control">
-                                            </div>
+                                            {{ form_row(form.phone) }}
                                         </div>
                                         <div class="col-md-6 col-sm-12">
-                                            <div class="form-group">
-                                                <label>Last Education <span class="required">*</span></label>
-                                                <input type="text" placeholder="" class="form-control">
-                                            </div>
+                                            {{ form_row(form.education) }}
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <label>Address <span class="required">*</span></label>
-                                                <input type="text" placeholder="" class="form-control">
-                                            </div>
+                                            {{ form_row(form.address) }}
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <label>About yourSelf <span class="required">*</span></label>
-                                                <textarea cols="6" rows="8" placeholder="" class="form-control"></textarea>
-                                            </div>
+                                            {{ form_row(form.about) }}
                                         </div>
                                         <div class="col-md-12 col-sm-12">
-                                            <button class="btn btn-default pull-right"> Save Profile <i class="fa fa-angle-right"></i></button>
+                                            <button type="submit" class="btn btn-default pull-right"> Save Profile <i class="fa fa-angle-right"></i></button>
                                         </div>
-                                    </form>
+                                    {{ form_end(form) }}
                                 </div>
                             </div>
                         </div>
