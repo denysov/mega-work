@@ -43,7 +43,7 @@ AppBundle\Entity\User:
             length: 255
             nullable: true
         about:
-            type: stext
+            type: text
             nullable: true
             
     lifecycleCallbacks: {  }

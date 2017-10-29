@@ -24,10 +24,8 @@ class UserController extends Controller
             $user->setPassword($encoded);
             $em->persist($user);
             $em->flush();
-            
-            var_dump($user);
-            die('user saved');
-            
+
+            return $this->redirectToRoute('homepage');
         }
         
         return $this->render('AppBundle:User:register.html.twig', array(
@@ -42,32 +40,6 @@ class UserController extends Controller
             'error'         => $authUtils->getLastAuthenticationError(),
         ));
     }
-
-    public function profileMenuAction(Request $request) {
-        
-        return $this->render('AppBundle:User:profile-menu.html.twig', [
-            'route' => $routeName
-        ]);
-    }
-
-    public function profileAction(Request $request) {
-        return $this->render('AppBundle:User:profile.html.twig', array(
-           
-        ));
-    }
-    
-    public function profileEditAction(Request $request) {
-        return $this->render('AppBundle:User:profile-edit.html.twig', array(
-           
-        ));
-    }
-    
-    public function profileCreateResumeAction(Request $request) {
-        return $this->render('AppBundle:User:profile-edit.html.twig', array(
-           
-        ));
-    }
-    
     public function logoutAction() {
         return new Response();
     }
