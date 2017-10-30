@@ -12,7 +12,7 @@
                     <a href="{{ path('user_profile_edit_resume') }}"> <i class="fa fa-file-o"></i>Build Resume </a>
                 </li>
                 <li class="{% if app.request.attributes.get('user_profile_saved_resume') == '_list' %}active{% endif %}"> 
-                    <a href="{{ path('user_profile_saved_resume') }}"> <i class="fa fa-file-o"></i>Saved Resume </a>
+                    <a href="{{ path('resume_view') }}"> <i class="fa fa-file-o"></i>View Resume </a>
                 </li>
                 <li class="{% if app.request.attributes.get('_route') == 'user_profile_jobs' %}active{% endif %}">
                     <a href="{{ path('user_profile_jobs') }}"> <i class="fa  fa-list-ul"></i> Jobs Applied</a>

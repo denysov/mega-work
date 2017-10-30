@@ -34,8 +34,8 @@ user_profile_edit:
     defaults: { _controller: AppBundle:UserProfile:edit }
 
 user_profile_edit_resume:
-    path:     /editResume
-    defaults: { _controller: AppBundle:UserProfile:stub }
+    path:     /user/profile/resume/edit
+    defaults: { _controller: AppBundle:UserProfile:editResume }
 
 user_profile_saved_resume:
     path:     /savedResume
@@ -48,3 +48,7 @@ user_profile_jobs:
 user_profile_followed:
     path:     /followed
     defaults: { _controller: AppBundle:UserProfile:stub }
+
+resume_view:
+    path:     /resume
+    defaults: { _controller: AppBundle:Resume:view }
