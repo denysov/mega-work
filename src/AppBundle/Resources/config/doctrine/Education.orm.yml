@@ -1,0 +1,27 @@
+AppBundle\Entity\Education:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\EducationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        startAt:
+            type: date
+            column: start_at
+        endAt:
+            type: date
+            column: end_at
+        about:
+            type: text
+    lifecycleCallbacks: {  }
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: education

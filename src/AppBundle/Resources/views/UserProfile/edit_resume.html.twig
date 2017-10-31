@@ -48,41 +48,18 @@
                         {{ include('AppBundle:UserProfile:_partials/profile-menu.html.twig') }}
                         
                         
+                            
+                        
                             <div class="col-md-8 col-sm-8 col-xs-12">
                                 <div class="heading-inner first-heading">
                                     <p class="title">Educational Detail</p>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
                                     <div class="profile-edit row">
-                                        <form>
-                                            <div class="col-md-12 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Degree Title <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Degree Title" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Degree start Date <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Pick Date" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Degree End Date <span class="required">*</span></label>
-                                                    <input type="text" placeholder=" Pick Date" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="form-group">
-                                                    <label class="control-label" for="appbundle_user_about">About</label>
-                                                    <textarea rows="10" id="appbundle_user_about" name="appbundle_user[about]" class="form-control"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12">
-                                                <button class="btn btn-default pull-right"> Save Education <i class="fa fa-angle-right"></i></button>
-                                            </div>
-                                        </form>
+                                        {{ render(controller(
+                                            'AppBundle:UserProfile:getEmbeddedForm',
+                                            { 'max': 3 }
+                                        )) }}    
                                     </div>
                                     <hr class="divider">
                                 </div>
@@ -193,5 +170,19 @@
                 </div>
             </div>
         </section>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="/js/app/resume.js"></script>
+
+<script>
+    $(document).ready(function() {
+        app.resume.init({
+            saveEducationUrl: '{{ path('user_resume_form') }}'
+        });
+    });
+</script>
 
 {% endblock %}

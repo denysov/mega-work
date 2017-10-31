@@ -4,6 +4,8 @@ namespace AppBundle\Controller;
 
 use AppBundle\Events\UserEvent;
 use AppBundle\Form\UserEditType;
+use AppBundle\Entity\Education;
+use AppBundle\Form\EducationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -50,6 +52,26 @@ class UserProfileController extends Controller
     {
         return $this->render('AppBundle:UserProfile:edit_resume.html.twig', array(
             // ...
+        ));
+    }
+    
+    public function getEmbeddedFormAction(Request $request) {
+        $education = new Education();
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $form = $this->createForm(EducationType::class, $education);
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $education->setUser($user);
+                $em->persist($education);
+                $em->flush();
+            }
+        }
+        
+        return $this->render('AppBundle:UserProfile:form-education.html.twig', array(
+            'form' => $form->createView()
         ));
     }
 

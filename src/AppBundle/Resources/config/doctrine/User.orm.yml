@@ -33,7 +33,7 @@ AppBundle\Entity\User:
             type: string
             length: 255
             nullable: true
-        education:
+        education_info:
             type: string
             length: 255
             nullable: true
@@ -46,3 +46,7 @@ AppBundle\Entity\User:
             nullable: true
             
     lifecycleCallbacks: {  }
+    oneToMany:
+        education:
+            targetEntity: Education
+            mappedBy: user

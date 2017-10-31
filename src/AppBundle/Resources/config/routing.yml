@@ -48,6 +48,10 @@ user_profile_jobs:
 user_profile_followed:
     path:     /followed
     defaults: { _controller: AppBundle:UserProfile:stub }
+    
+user_resume_form:
+    path:     /profile/form
+    defaults: { _controller: AppBundle:UserProfile:getEmbeddedForm }    
 
 resume_view:
     path:     /resume

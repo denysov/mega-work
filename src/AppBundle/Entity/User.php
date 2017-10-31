@@ -325,4 +325,64 @@ class User implements UserInterface
     {
         return $this->about;
     }
+    /**
+     * @var string
+     */
+    private $education_info;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->education = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set educationInfo
+     *
+     * @param string $educationInfo
+     *
+     * @return User
+     */
+    public function setEducationInfo($educationInfo)
+    {
+        $this->education_info = $educationInfo;
+
+        return $this;
+    }
+
+    /**
+     * Get educationInfo
+     *
+     * @return string
+     */
+    public function getEducationInfo()
+    {
+        return $this->education_info;
+    }
+
+    /**
+     * Add education
+     *
+     * @param \AppBundle\Entity\Education $education
+     *
+     * @return User
+     */
+    public function addEducation(\AppBundle\Entity\Education $education)
+    {
+        $this->education[] = $education;
+
+        return $this;
+    }
+
+    /**
+     * Remove education
+     *
+     * @param \AppBundle\Entity\Education $education
+     */
+    public function removeEducation(\AppBundle\Entity\Education $education)
+    {
+        $this->education->removeElement($education);
+    }
 }

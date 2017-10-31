@@ -1,0 +1,17 @@
+{{ form_start(form) }}
+    <div class="col-md-12 col-sm-12">
+        {{ form_row(form.title) }}
+    </div>
+    <div class="col-md-6 col-sm-12">
+        {{ form_row(form.startAt) }}
+    </div>
+    <div class="col-md-6 col-sm-12">
+        {{ form_row(form.endAt) }}
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        {{ form_row(form.about) }}
+    </div>
+    <div class="col-md-12 col-sm-12">
+        <button type="button" class="btn btn-default pull-right app-save-education"> Save Education <i class="fa fa-angle-right"></i></button>
+    </div>
+{{ form_end(form) }}
