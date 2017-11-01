@@ -1,175 +1,125 @@
-{% extends "AppBundle::layout.html.twig" %}
+{% extends app.request.xmlHttpRequest()
+     ? 'AppBundle::ajax.html.twig'
+     : 'AppBundle:UserProfile:profile-layout.html.twig' %}
+          
 
-{% block header %}{% endblock %}
-
-{% block styles %}
-<link rel="stylesheet" href="/css/et-line-fonts.css" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/css/et-line-fonts.css" type="text/css">
-{% endblock %}
+{% block sub_body %}
 
 
-{% block body %}
-
-<section class="dashboard parallex">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                        <div class="dashboard-header">
-                            <div class="col-md-5 col-sm-5 col-xs-12">
-                                <div class="user-avatar ">
-                                    <img src="/images/users/12.jpg" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/users/12.jpg" alt="" class="img-responsive center-block ">
-                                    <h3>Arslan Tariq</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-12">
-                                <div class="rad-info-box rad-txt-success">
-                                    <i class="icon icon-presentation"></i>
-                                    <span class="title-dashboard">Followings</span>
-                                    <span class="value"><span>250K</span></span>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-12">
-                                <div class="rad-info-box rad-txt-success">
-                                    <i class="icon icon-aperture"></i>
-                                    <span class="title-dashboard">Jobs Applied</span>
-                                    <span class="value"><span>200</span></span>
-                                </div>
-                            </div>
-                        </div>
+    <div class="heading-inner first-heading">
+        <p class="title">Educational Detail</p>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+        <div class="profile-edit row">
+            {{ render(controller(
+                'AppBundle:UserProfile:getEmbeddedForm',
+                { 'max': 3 }
+            )) }}    
+        </div>
+        <hr class="divider">
+    </div>
+    
+    <div class="heading-inner first-heading">
+        <p class="title">Job Experience</p>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+        <div class="profile-edit row">
+            <form>
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <label>Position <span class="required">*</span></label>
+                        <input type="text" placeholder="Position Title" class="form-control">
                     </div>
                 </div>
-            </div>
-        </section>
-
-<section class="dashboard-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        
-                        {{ include('AppBundle:UserProfile:_partials/profile-menu.html.twig') }}
-                        
-                        
-                            
-                        
-                            <div class="col-md-8 col-sm-8 col-xs-12">
-                                <div class="heading-inner first-heading">
-                                    <p class="title">Educational Detail</p>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                                    <div class="profile-edit row">
-                                        {{ render(controller(
-                                            'AppBundle:UserProfile:getEmbeddedForm',
-                                            { 'max': 3 }
-                                        )) }}    
-                                    </div>
-                                    <hr class="divider">
-                                </div>
-                                
-                                <div class="heading-inner first-heading">
-                                    <p class="title">Job Experience</p>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                                    <div class="profile-edit row">
-                                        <form>
-                                            <div class="col-md-12 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Position <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Position Title" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Job start Date <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Pick Date" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>JobEnd Date <span class="required">*</span></label>
-                                                    <input type="text" placeholder=" Pick Date" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="form-group">
-                                                    <label class="control-label" for="appbundle_user_about">About</label>
-                                                    <textarea rows="10" id="appbundle_user_about" name="appbundle_user[about]" class="form-control"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12">
-                                                <button class="btn btn-default pull-right"> Save Experience <i class="fa fa-angle-right"></i></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <hr class="divider">
-                                </div>
-                                
-                                <div class="heading-inner first-heading">
-                                    <p class="title">Add Skills</p>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                                    <div class="profile-edit row">
-                                        <form>
-                                            <div class="col-md-8 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Skill Name <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Skill Name" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Add Percentage (%) <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Percentage %" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12">
-                                                <button class="btn btn-default pull-right"> Save Skills <i class="fa fa-angle-right"></i></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <hr class="divider">
-                                </div>
-                                
-                                <div class="heading-inner first-heading">
-                                    <p class="title">Social Links</p>
-                                </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                                    <div class="profile-edit row">
-                                        <form>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Face Book <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Profile URL" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Twitter <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Profile URL" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>LinkedIn <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Profile URL" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Google Pluse <span class="required">*</span></label>
-                                                    <input type="text" placeholder="Profile URL" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-sm-12">
-                                                <button class="btn btn-default pull-right"> Save Profiles Links <i class="fa fa-angle-right"></i></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label>Job start Date <span class="required">*</span></label>
+                        <input type="text" placeholder="Pick Date" class="form-control">
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label>JobEnd Date <span class="required">*</span></label>
+                        <input type="text" placeholder=" Pick Date" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label" for="appbundle_user_about">About</label>
+                        <textarea rows="10" id="appbundle_user_about" name="appbundle_user[about]" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <button class="btn btn-default pull-right"> Save Experience <i class="fa fa-angle-right"></i></button>
+                </div>
+            </form>
+        </div>
+        <hr class="divider">
+    </div>
+    
+    <div class="heading-inner first-heading">
+        <p class="title">Add Skills</p>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+        <div class="profile-edit row">
+            <form>
+                <div class="col-md-8 col-sm-12">
+                    <div class="form-group">
+                        <label>Skill Name <span class="required">*</span></label>
+                        <input type="text" placeholder="Skill Name" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="form-group">
+                        <label>Add Percentage (%) <span class="required">*</span></label>
+                        <input type="text" placeholder="Percentage %" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <button class="btn btn-default pull-right"> Save Skills <i class="fa fa-angle-right"></i></button>
+                </div>
+            </form>
+        </div>
+        <hr class="divider">
+    </div>
+    
+    <div class="heading-inner first-heading">
+        <p class="title">Social Links</p>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+        <div class="profile-edit row">
+            <form>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label>Face Book <span class="required">*</span></label>
+                        <input type="text" placeholder="Profile URL" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label>Twitter <span class="required">*</span></label>
+                        <input type="text" placeholder="Profile URL" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label>LinkedIn <span class="required">*</span></label>
+                        <input type="text" placeholder="Profile URL" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label>Google Pluse <span class="required">*</span></label>
+                        <input type="text" placeholder="Profile URL" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <button class="btn btn-default pull-right"> Save Profiles Links <i class="fa fa-angle-right"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
 {% endblock %}
 

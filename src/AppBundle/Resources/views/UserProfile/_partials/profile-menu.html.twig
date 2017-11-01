@@ -3,24 +3,32 @@
         <div class="panel">
             <ul class="nav nav-pills nav-stacked">
                 <li class="{% if app.request.attributes.get('_route') == 'user_profile' %}active{% endif %}">
-                    <a href="{{ path('user_profile') }}"> <i class="fa fa-user"></i> Profile</a>
+                    <a class="app-profile-link" href="{{ path('user_profile') }}"> <i class="fa fa-user"></i> Profile</a>
                 </li>
                 <li class="{% if app.request.attributes.get('_route') == 'user_profile_edit' %}active{% endif %}">
-                    <a href="{{ path('user_profile_edit') }}"> <i class="fa fa-edit"></i> Edit Profile</a>
+                    <a class="app-profile-link" href="{{ path('user_profile_edit') }}"> <i class="fa fa-edit"></i> Edit Profile</a>
                 </li>
                 <li class="{% if app.request.attributes.get('_route') == 'user_profile_edit_resume' %}active{% endif %}">
-                    <a href="{{ path('user_profile_edit_resume') }}"> <i class="fa fa-file-o"></i>Build Resume </a>
+                    <a class="app-profile-link" href="{{ path('user_profile_edit_resume') }}"> <i class="fa fa-file-o"></i>Build Resume </a>
                 </li>
                 <li class="{% if app.request.attributes.get('user_profile_saved_resume') == '_list' %}active{% endif %}"> 
-                    <a href="{{ path('resume_view') }}"> <i class="fa fa-file-o"></i>View Resume </a>
+                    <a class="" href="{{ path('resume_view') }}"> <i class="fa fa-file-o"></i>View Resume </a>
                 </li>
                 <li class="{% if app.request.attributes.get('_route') == 'user_profile_jobs' %}active{% endif %}">
-                    <a href="{{ path('user_profile_jobs') }}"> <i class="fa  fa-list-ul"></i> Jobs Applied</a>
+                    <a class="app-profile-link" href="{{ path('user_profile_jobs') }}"> <i class="fa  fa-list-ul"></i> Jobs Applied</a>
                 </li>
                 <li class="{% if app.request.attributes.get('_route') == 'user_profile_followed' %}active{% endif %}">
-                    <a href="{{ path('user_profile_followed') }}"> <i class="fa  fa-bookmark-o"></i> Followed Companies </a>
+                    <a class="app-profile-link" href="{{ path('user_profile_followed') }}"> <i class="fa  fa-bookmark-o"></i> Followed Companies </a>
                 </li>
             </ul>
         </div>
     </div>
 </div>
+
+<script src="/js/app/navigation.js"></script>
+
+<script>
+    $(document).ready(function() {
+        app.navigation.init();
+    });
+</script>

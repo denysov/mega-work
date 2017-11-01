@@ -11,8 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserProfileController extends Controller
 {
+    const SLEEP_TIME = 0;
+    
     public function stubAction()
     {
+        sleep(self::SLEEP_TIME);
         return $this->render('AppBundle:UserProfile:stub.html.twig', array(
             // ...
         ));
@@ -20,6 +23,7 @@ class UserProfileController extends Controller
 
     public function dashboardAction()
     {
+        sleep(self::SLEEP_TIME);
         return $this->render('AppBundle:UserProfile:profile.html.twig', array(
             // ...
         ));
@@ -27,6 +31,7 @@ class UserProfileController extends Controller
 
     public function editAction(Request $request)
     {
+        sleep(self::SLEEP_TIME);
         $user = $this->get('security.token_storage')->getToken()->getUser();
         $form = $this->createForm(UserEditType::class, $user);
         $form->handleRequest($request);
@@ -50,6 +55,7 @@ class UserProfileController extends Controller
 
     public function editResumeAction()
     {
+        sleep(self::SLEEP_TIME);
         return $this->render('AppBundle:UserProfile:edit_resume.html.twig', array(
             // ...
         ));
@@ -77,6 +83,7 @@ class UserProfileController extends Controller
 
     public function savedResumeAction()
     {
+        sleep(self::SLEEP_TIME);
         return $this->render('AppBundle:UserProfile:saved_resume.html.twig', array(
             // ...
         ));
@@ -84,6 +91,7 @@ class UserProfileController extends Controller
 
     public function jobsAction()
     {
+        sleep(self::SLEEP_TIME);
         return $this->render('AppBundle:UserProfile:jobs.html.twig', array(
             // ...
         ));
@@ -91,6 +99,7 @@ class UserProfileController extends Controller
 
     public function followedAction()
     {
+        sleep(self::SLEEP_TIME);
         return $this->render('AppBundle:UserProfile:followed.html.twig', array(
             // ...
         ));

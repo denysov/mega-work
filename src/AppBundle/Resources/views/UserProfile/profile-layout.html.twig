@@ -1,0 +1,76 @@
+{% extends 'AppBundle::layout.html.twig' %}
+     
+{% block styles %}
+<link rel="stylesheet" href="/css/et-line-fonts.css" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/css/et-line-fonts.css" type="text/css">
+{% endblock %}
+
+
+{% block body %}
+
+<section class="dashboard parallex">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                        <div class="dashboard-header">
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <div class="user-avatar ">
+                                    <img src="/images/users/12.jpg" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/users/12.jpg" alt="" class="img-responsive center-block ">
+                                    <h3>Arslan Tariq</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="rad-info-box rad-txt-success">
+                                    <i class="icon icon-presentation"></i>
+                                    <span class="title-dashboard">Followings</span>
+                                    <span class="value"><span>250K</span></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="rad-info-box rad-txt-success">
+                                    <i class="icon icon-aperture"></i>
+                                    <span class="title-dashboard">Jobs Applied</span>
+                                    <span class="value"><span>200</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section class="dashboard-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        
+                        {{ include('AppBundle:UserProfile:_partials/profile-menu.html.twig') }}
+                        
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <div class="app-loading-block" style="height: 500px; display: none">
+                                <img src="/images/AjaxLoader.gif" style="display: block; margin: auto; padding: 100px" />
+                            </div>
+                            <div class="app-profile-container">
+                                {% block sub_body %}{% endblock %}        
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="/js/app/resume.js"></script>
+
+<script>
+    $(document).ready(function() {
+        app.resume.init({
+            saveEducationUrl: '{{ path('user_resume_form') }}'
+        });
+    });
+</script>
+
+{% endblock %}

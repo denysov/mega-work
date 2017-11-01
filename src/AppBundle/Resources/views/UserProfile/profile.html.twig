@@ -1,96 +1,49 @@
-{% extends "AppBundle::layout.html.twig" %}
+{% extends app.request.xmlHttpRequest()
+     ? 'AppBundle::ajax.html.twig'
+     : 'AppBundle:UserProfile:profile-layout.html.twig' %}
+          
+{% block sub_body %}
 
-{% block header %}{% endblock %}
+<div class="job-short-detail">
+    <div class="heading-inner">
+        <p class="title">Profile detail</p>
+    </div>
+    <dl>
+        <dt>First Name:</dt>
+        <dd>Arslan Chaudhary</dd>
 
-{% block body %}
+        <dt>Father Name:</dt>
+        <dd> Ch Tariq Ayoub </dd>
 
-{% block styles %}
-<link rel="stylesheet" href="/css/et-line-fonts.css" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/css/et-line-fonts.css" type="text/css">
-{% endblock %}
+        <dt>Date Of Birth:</dt>
+        <dd> 15 Feb,2015 </dd>
 
-<section class="dashboard parallex">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                        <div class="dashboard-header">
-                            <div class="col-md-5 col-sm-5 col-xs-12">
-                                <div class="user-avatar ">
-                                    <img src="/images/users/12.jpg" tppabs="http://templates.scriptsbundle.com/opportunities-v3/demo/images/users/12.jpg" alt="" class="img-responsive center-block ">
-                                    <h3>Arslan Tariq</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-12">
-                                <div class="rad-info-box rad-txt-success">
-                                    <i class="icon icon-presentation"></i>
-                                    <span class="title-dashboard">Followings</span>
-                                    <span class="value"><span>250K</span></span>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-12">
-                                <div class="rad-info-box rad-txt-success">
-                                    <i class="icon icon-aperture"></i>
-                                    <span class="title-dashboard">Jobs Applied</span>
-                                    <span class="value"><span>200</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <dt>Phone:</dt>
+        <dd>+99 333 1234567 </dd>
 
-<section class="dashboard-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        {{ include('AppBundle:UserProfile:_partials/profile-menu.html.twig') }}
-                        <div class="col-md-8 col-sm-8 col-xs-12">
-                            <div class="job-short-detail">
-                                <div class="heading-inner">
-                                    <p class="title">Profile detail</p>
-                                </div>
-                                <dl>
-                                    <dt>First Name:</dt>
-                                    <dd>Arslan Chaudhary</dd>
+        <dt>Email:</dt>
+        <dd>martine-aug234@domain.com </dd>
 
-                                    <dt>Father Name:</dt>
-                                    <dd> Ch Tariq Ayoub </dd>
+        <dt>Last Education:</dt>
+        <dd>Phd in Information Technology</dd>
 
-                                    <dt>Date Of Birth:</dt>
-                                    <dd> 15 Feb,2015 </dd>
+        <dt>Address:</dt>
+        <dd>234 Uptown new City Tower </dd>
 
-                                    <dt>Phone:</dt>
-                                    <dd>+99 333 1234567 </dd>
+        <dt>City:</dt>
+        <dd>Islamabad, Rawalindi</dd>
 
-                                    <dt>Email:</dt>
-                                    <dd>martine-aug234@domain.com </dd>
+        <dt>Provience:</dt>
+        <dd>North Vega </dd>
 
-                                    <dt>Last Education:</dt>
-                                    <dd>Phd in Information Technology</dd>
+        <dt>Country:</dt>
+        <dd>Somewere at Antarctica </dd>
+    </dl>
+</div>
 
-                                    <dt>Address:</dt>
-                                    <dd>234 Uptown new City Tower </dd>
-
-                                    <dt>City:</dt>
-                                    <dd>Islamabad, Rawalindi</dd>
-
-                                    <dt>Provience:</dt>
-                                    <dd>North Vega </dd>
-
-                                    <dt>Country:</dt>
-                                    <dd>Somewere at Antarctica </dd>
-                                </dl>
-                            </div>
-
-                            <div class="heading-inner">
-                                <p class="title">Some Line About Me</p>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet. </p>
-                            <p>{% trans %}Symfony is great{% endtrans %}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+<div class="heading-inner">
+    <p class="title">Some Line About Me</p>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet. </p>
+<p>{% trans %}Symfony is great{% endtrans %}</p>
 {% endblock %}
