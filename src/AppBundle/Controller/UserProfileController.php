@@ -105,4 +105,9 @@ class UserProfileController extends Controller
         ));
     }
 
+    public function validateAction(Request $request) {
+        $violations = $this->get('validator')->validatePropertyValue($user, 'email', 'lalala');
+        var_dump($violations[0]->getMessage());
+        die();
+    }
 }
