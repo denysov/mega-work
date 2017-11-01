@@ -11,6 +11,8 @@ class UserProfileControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/stub');
+        
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
     public function testDashboard()
@@ -18,6 +20,7 @@ class UserProfileControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/dashboard');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
     public function testEdit()
@@ -25,6 +28,7 @@ class UserProfileControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/edit');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
     public function testEditresume()
@@ -32,6 +36,7 @@ class UserProfileControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/editResume');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
     public function testSavedresume()
@@ -39,6 +44,7 @@ class UserProfileControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/savedResume');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
     public function testJobs()
@@ -46,6 +52,7 @@ class UserProfileControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/jobs');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
     public function testFollowed()
@@ -53,6 +60,7 @@ class UserProfileControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/followed');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
 }

@@ -11,6 +11,8 @@ class ResumeControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/resume');
+        
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
 }

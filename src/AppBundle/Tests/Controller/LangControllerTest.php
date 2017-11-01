@@ -11,6 +11,8 @@ class LangControllerTest extends WebTestCase
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/change');
+        
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
 }
