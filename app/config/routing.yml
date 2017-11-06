@@ -4,3 +4,7 @@ app:
 
 user:
     resource: '@AppBundle/Resources/config/routing.yml'
+
+api:
+    resource: "@AppBundle/Resources/config/api_routing.yml"
+    prefix:   /api
