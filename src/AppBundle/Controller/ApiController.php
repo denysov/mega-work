@@ -10,7 +10,7 @@ class ApiController extends FOSRestController
     {
         $data = [];
         $view = $this->view($data, 200)
-            ->setTemplate("MyBundle:Users:getUsers.html.twig")
+            ->setTemplate("AppBundle:Api:index.html.twig")
             ->setTemplateVar('users')
         ;
 
